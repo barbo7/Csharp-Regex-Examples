@@ -39,3 +39,37 @@ public static string LongestWord(string sen) {
       else if(i.Length==uzun)
         uzunOlanlar.Add(i);
     }
+/*
+1-Bir metindeki tüm e-posta adreslerini bulmak için kullanabileceğiniz bir regex ifadesi nedir?
+
+2-Bir metindeki tüm telefon numaralarını bulmak için kullanabileceğiniz bir regex ifadesi nedir? (Örnek format: (555) 555-5555)
+
+3-Bir metindeki tüm URL'leri (web siteleri) bulmak için kullanabileceğiniz bir regex ifadesi nedir?
+
+4-Bir metindeki tüm zip kodlarını (posta kodları) bulmak için kullanabileceğiniz bir regex ifadesi nedir? (Örnek format: 12345 veya 12345-6789)
+
+5-Bir metindeki tüm tarihleri (örneğin, 01/01/2023 veya 2023-01-01) bulmak için kullanabileceğiniz bir regex ifadesi nedir?
+
+6-Bir metindeki tüm sayıları (negatif ve ondalık sayılar dahil) bulmak için kullanabileceğiniz bir regex ifadesi nedir?
+
+7-Bir metindeki tüm IP adreslerini (IPv4 ve IPv6) bulmak için kullanabileceğiniz bir regex ifadesi nedir?
+
+8-Bir metindeki tüm HTML etiketlerini (örneğin, <div> veya <a href="...">) bulmak için kullanabileceğiniz bir regex ifadesi nedir?
+
+9-Bir metindeki tüm Twitter kullanıcı adlarını (örneğin, @username) bulmak için kullanabileceğiniz bir regex ifadesi nedir?
+
+10-Bir metindeki tüm fiyatları (örneğin, $99.99 veya 100 TL) bulmak için kullanabileceğiniz bir regex ifadesi nedir?
+*/
+
+   Regex rg1 = new Regex(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$");
+   Regex rg2 = new Regex(@"\(\d{3}\)\s\d{3}-\d{4}");
+   Regex rg3 = new Regex(@"^www\.\w+\.com$");
+   Regex rg4 = new Regex(@"^\w+.com$");
+   Regex rg5 = new Regex(@"^\d{2}/\d{2}/\d{4}$|^\d{4}/\d{2}/\d{2}$");
+   Regex rg6 = new Regex(@"^-?\d+(\.\d+)?$");
+   Regex rg7 = new Regex(@"\d{3}\.\d{3}\.\d{1,3}\.\d{1,3}");
+   Regex rg8 = new Regex(@"\<div\>|\<a href=\"\w+"\>");
+   Regex rg9 = new Regex(@"^@\w+$");
+   Regex rg10 = new Regex@"(?:\$|₺)\d+(\.\d{2})?");
+   
+   
