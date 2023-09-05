@@ -1,3 +1,6 @@
+using System;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
 /*Codeland Username Validation
 HIDE QUESTION
 Have the function CodelandUsernameValidation(str) take the str parameter being passed and determine if the string is a valid username according to the following rules:
@@ -13,3 +16,26 @@ Have the function CodelandUsernameValidation(str) take the str parameter being p
       
     return match.Success.ToString();
   }
+
+/*Longest Word
+HIDE QUESTION
+Have the function LongestWord(sen) take the sen parameter being passed and return the longest word in the string.
+If there are two or more words that are the same length, return the first word from the string with that length. 
+Ignore punctuation and assume sen will not be empty. Words may also contain numbers, for example "Hello world123 567"*/
+public static string LongestWord(string sen) {
+     sen = Regex.Replace(sen, @"[^\w\s]", "");
+    string[] kelimeler = sen.Split(' ');
+    int uzun = 0;
+    List<string> uzunOlanlar = new List<string>();
+    string son = "";
+    foreach(string i in kelimeler)
+    {
+      if(i.Length > uzun)
+      {
+        uzun = i.Length;
+        uzunOlanlar.Clear();
+        uzunOlanlar.Add(i);
+      }
+      else if(i.Length==uzun)
+        uzunOlanlar.Add(i);
+    }
